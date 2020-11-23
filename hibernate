@@ -1,0 +1,35 @@
+#!/bin/sh
+~/.scripts/lock.sh &
+PIDS=$(ps -ef | grep davmail | tr -s ' ' | cut -d' ' -f2)
+while IFS= read -r line; do
+    kill -9 $line
+done <<< "$PIDS"
+
+pkill SVPManager
+
+#killall chromium
+
+#sudo systemctl stop NetworkManager.service
+
+sleep 1
+#echo "suspend" | tee /proc/driver/nvidia/suspend
+systemctl hibernate
+#echo "resume" | sudo tee /proc/driver/nvidia/suspend
+sleep 20
+
+#sudo systemctl start NetworkManager.service
+
+#chromium --profile-directory='Default' --ignore-gpu-blacklist &
+
+SVPManager &
+
+davmail &
+sshfs root@aruba.ledgedash.com:/ /mnt/remotes/aruba1/ &
+
+sleep 5
+
+sudo ip link set dev enp7s0 down
+sleep 1
+sudo ip link set dev enp7s0 up
+
+disown -a

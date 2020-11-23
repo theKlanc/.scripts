@@ -1,0 +1,7 @@
+#!/bin/sh
+notify-send "Nintendo Switch" "Injecting payload..."
+#python3 /home/klanc/Documents/Switch/fusee-launcher/fusee-launcher.py /home/klanc/Downloads/fusee-primary.bin
+#python3 /home/klanc/Documents/Switch/fusee-launcher/fusee-launcher.py /home/klanc/Documents/Switch/payloads/hekate_ctcaer.bin
+python3 /home/klanc/Documents/Switch/fusee-launcher/fusee-launcher.py /home/klanc/Documents/Switch/payloads/hekate.bin
+#python3 /home/klanc/Documents/Switch/fusee-launcher/fusee-launcher.py /home/klanc/Documents/Switch/payloads/hekate_ctcaer_5.0.0.bin
+notify-send "Nintendo Switch" "Payload injected"

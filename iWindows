@@ -1,0 +1,16 @@
+#!/bin/sh
+
+sudo cp -f /boot/EFI/refind/refind.conf.windows /boot/EFI/refind/refind.conf
+
+sudo cp -f /etc/systemd/sleep.conf.reboot /etc/systemd/sleep.conf
+
+date
+hibernate
+date
+
+sudo cp -f /etc/systemd/sleep.conf.normal /etc/systemd/sleep.conf
+
+sudo cp -f /boot/EFI/refind/refind.conf.linux /boot/EFI/refind/refind.conf
+
+sudo umount /boot
+sudo mount /boot

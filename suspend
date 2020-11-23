@@ -1,0 +1,6 @@
+#!/bin/sh
+~/.scripts/lock.sh &
+sleep 1
+systemctl suspend
+sleep 20
+sshfs root@aruba.ledgedash.com:/ /mnt/remotes/aruba1/ &
