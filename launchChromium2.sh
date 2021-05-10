@@ -1,2 +1,2 @@
 #!/bin/sh
-chromium --profile-directory="Profile 1" --disable-gpu-vsync $@ &
+google-chrome-stable --profile-directory="Profile 1" $@ &
