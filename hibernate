@@ -27,8 +27,8 @@ sshfs root@aruba.ledgedash.com:/ /mnt/remotes/aruba1/ &
 
 sleep 5
 
-sudo ip link set dev enp7s0 down
-sleep 1
-sudo ip link set dev enp7s0 up
+#sudo ip link set dev enp7s0 down
+#sleep 1
+#sudo ip link set dev enp7s0 up
 
 disown -a

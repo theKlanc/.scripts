@@ -1,3 +1,12 @@
 #!/bin/sh
-#flock ~/.scripts/iWindows
-iWindows
+
+sudo efibootmgr -n 0002
+
+sudo cp -f /etc/systemd/sleep.conf.reboot /etc/systemd/sleep.conf
+
+date
+hibernate
+date
+
+sudo cp -f /etc/systemd/sleep.conf.normal /etc/systemd/sleep.conf
+

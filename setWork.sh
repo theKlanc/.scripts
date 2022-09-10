@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+barriers -c ~/Documents/workConfig.sgc &
+ddcutil setvcp 60 11
+disown -a
 /home/klanc/.screenlayout/work.sh
 i3-msg restart
 sleep 2
